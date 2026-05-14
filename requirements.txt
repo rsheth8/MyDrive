@@ -1,0 +1,14 @@
+pandas
+geopandas
+numpy
+scikit-learn
+xgboost
+shap
+folium
+streamlit
+streamlit-folium
+osmnx
+networkx
+joblib
+pyproj
+shapely

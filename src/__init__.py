@@ -1,0 +1,1 @@
+"""SafePath package initialization."""

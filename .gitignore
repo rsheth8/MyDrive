@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Data — keep schema/examples in the repo, not raw rows
+data/*.csv
+data/processed/
+!data/.gitkeep
+
+# Models — too large to track; reproducible from src/model.py
+models/*.joblib
+models/*.pkl
+!models/.gitkeep
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
