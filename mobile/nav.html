@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#070b14" />
+    <title>MyDrive Navigation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="/mobile/nav.css" />
+  </head>
+  <body>
+    <div id="nav-app">
+      <div id="nav-map"></div>
+
+      <header class="nav-top glass">
+        <a href="/" class="nav-back" id="nav-exit">← Exit</a>
+        <div class="nav-trip">
+          <p class="nav-label" id="nav-title">Loading route…</p>
+          <p class="nav-meta" id="nav-meta"></p>
+        </div>
+        <button type="button" id="nav-voice" class="nav-icon-btn" title="Voice guidance" aria-pressed="false">
+          🔊
+        </button>
+      </header>
+
+      <section class="nav-banner" id="nav-safety" role="alert">
+        <strong>Park to start.</strong> Do not interact while driving. Passenger or parked use only.
+      </section>
+
+      <section class="nav-current glass" id="nav-current">
+        <p class="nav-step-label">Next</p>
+        <p class="nav-instruction" id="nav-instruction">Loading directions…</p>
+        <p class="nav-distance" id="nav-step-distance"></p>
+      </section>
+
+      <section class="nav-panel glass" id="nav-panel">
+        <div class="nav-panel-head">
+          <h2>Turn-by-turn</h2>
+          <span id="nav-provider" class="nav-provider"></span>
+        </div>
+        <ol id="nav-steps" class="nav-steps"></ol>
+        <div class="nav-external">
+          <button type="button" class="btn ext google" id="open-google">Google Maps</button>
+          <button type="button" class="btn ext apple" id="open-apple">Apple Maps</button>
+        </div>
+      </section>
+
+      <button type="button" id="nav-start" class="nav-start">Start navigation</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/mobile/nav.js" type="module"></script>
+  </body>
+</html>

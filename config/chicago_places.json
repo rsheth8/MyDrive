@@ -1,0 +1,74 @@
+{
+  "region": "Chicagoland",
+  "center": {"lat": 41.8781, "lon": -87.6298, "zoom": 11},
+  "presets": [
+    {
+      "id": "loop_wrigley",
+      "label": "Loop → Wrigleyville",
+      "from_label": "The Loop",
+      "from_address": "Chicago Loop, Chicago, IL",
+      "from_lat": 41.8781,
+      "from_lon": -87.6298,
+      "to_label": "Wrigley Field",
+      "to_address": "Wrigley Field, Chicago, IL",
+      "to_lat": 41.9484,
+      "to_lon": -87.6553
+    },
+    {
+      "id": "loop_ohare",
+      "label": "Loop → O'Hare",
+      "from_label": "The Loop",
+      "from_address": "Chicago Loop, Chicago, IL",
+      "from_lat": 41.8781,
+      "from_lon": -87.6298,
+      "to_label": "O'Hare Airport",
+      "to_address": "O'Hare International Airport, Chicago, IL",
+      "to_lat": 41.9742,
+      "to_lon": -87.9073
+    },
+    {
+      "id": "hyde_loop",
+      "label": "Hyde Park → Loop",
+      "from_label": "Hyde Park",
+      "from_address": "Hyde Park, Chicago, IL",
+      "from_lat": 41.7948,
+      "from_lon": -87.5901,
+      "to_label": "The Loop",
+      "to_address": "Chicago Loop, Chicago, IL",
+      "to_lat": 41.8781,
+      "to_lon": -87.6298
+    },
+    {
+      "id": "naperville_loop",
+      "label": "Naperville → Loop",
+      "from_label": "Naperville",
+      "from_address": "Naperville, IL",
+      "from_lat": 41.7508,
+      "from_lon": -88.1535,
+      "to_label": "The Loop",
+      "to_address": "Chicago Loop, Chicago, IL",
+      "to_lat": 41.8781,
+      "to_lon": -87.6298
+    },
+    {
+      "id": "evanston_loop",
+      "label": "Evanston → Loop",
+      "from_label": "Evanston",
+      "from_address": "Evanston, IL",
+      "from_lat": 42.0451,
+      "from_lon": -87.6877,
+      "to_label": "The Loop",
+      "to_address": "Chicago Loop, Chicago, IL",
+      "to_lat": 41.8781,
+      "to_lon": -87.6298
+    }
+  ],
+  "popular_destinations": [
+    {"label": "The Loop", "address": "Chicago Loop, Chicago, IL", "lat": 41.8781, "lon": -87.6298},
+    {"label": "O'Hare Airport", "address": "O'Hare International Airport, Chicago, IL", "lat": 41.9742, "lon": -87.9073},
+    {"label": "Midway Airport", "address": "Midway International Airport, Chicago, IL", "lat": 41.7868, "lon": -87.7522},
+    {"label": "Wrigley Field", "address": "Wrigley Field, Chicago, IL", "lat": 41.9484, "lon": -87.6553},
+    {"label": "United Center", "address": "United Center, Chicago, IL", "lat": 41.8807, "lon": -87.6742},
+    {"label": "Navy Pier", "address": "Navy Pier, Chicago, IL", "lat": 41.8919, "lon": -87.6051}
+  ]
+}

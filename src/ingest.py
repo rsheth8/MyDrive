@@ -39,8 +39,8 @@ def fuse_data(
     crash_df = crash_df.copy()
     weather_df = weather_df.copy()
 
-    crash_df["hour_bucket"] = crash_df[time_col].dt.floor("H")
-    weather_df["hour_bucket"] = weather_df[time_col].dt.floor("H")
+    crash_df["hour_bucket"] = crash_df[time_col].dt.floor("h")
+    weather_df["hour_bucket"] = weather_df[time_col].dt.floor("h")
 
     weather_hourly = (
         weather_df.dropna(subset=["hour_bucket"])

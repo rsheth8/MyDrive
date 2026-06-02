@@ -1,0 +1,11 @@
+{
+  "name": "MyDrive Chicagoland",
+  "short_name": "MyDrive",
+  "description": "Your drive, your way — plan Chicagoland routes, then open Maps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#4f8cff",
+  "orientation": "portrait",
+  "icons": []
+}

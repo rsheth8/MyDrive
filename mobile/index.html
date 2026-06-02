@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#070b14" />
+    <title>MyDrive</title>
+    <link rel="manifest" href="/mobile/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/mobile/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%234f8cff'/><stop offset='1' stop-color='%232563eb'/></linearGradient></defs><rect fill='url(%23g)' width='100' height='100' rx='22'/><path fill='white' d='M50 22 L72 38 V58 C72 72 50 82 50 82 S28 72 28 58 V38 Z'/></svg>"
+    />
+  </head>
+  <body>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="app" id="app-root">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 3L20 8V14C20 19 12 22 12 22C12 22 4 19 4 14V8L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 12L11 14L15 10"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div>
+            <h1 id="brand-name">MyDrive</h1>
+            <p class="subtitle" id="brand-tagline">Your drive, your way — then open Maps.</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="mode-bar" role="tablist" aria-label="App mode">
+        <button type="button" id="mode-full" class="mode-btn active" role="tab" aria-selected="true">
+          <span class="mode-title">Full</span>
+          <span class="mode-desc">All route types</span>
+        </button>
+        <button type="button" id="mode-passenger" class="mode-btn" role="tab" aria-selected="false">
+          <span class="mode-title">Passenger</span>
+          <span class="mode-desc">3 simple choices</span>
+        </button>
+      </div>
+
+      <section class="safety-banner" role="alert">
+        <span class="safety-icon" aria-hidden="true">🛑</span>
+        <div>
+          <strong>Park first.</strong>
+          <span id="safety-text">
+            Set your trip before driving. Passenger mode = 3 simple choices for your copilot.
+          </span>
+        </div>
+      </section>
+
+      <p id="offline-badge" class="offline-badge hidden">Offline — showing saved trips</p>
+
+      <section id="setup-panel" class="panel glass">
+        <h2 class="section-label">Popular trips</h2>
+        <div id="presets" class="preset-grid"></div>
+
+        <h2 class="section-label section-gap">Your trip</h2>
+        <label class="field">
+          <span>From</span>
+          <div class="ac-wrap">
+            <div class="input-row">
+              <input
+                id="from-input"
+                type="search"
+                placeholder="Search address or place…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                aria-autocomplete="list"
+                aria-controls="from-ac"
+                aria-expanded="false"
+              />
+              <button
+                type="button"
+                id="voice-from"
+                class="icon-btn"
+                title="Speak destination (parked only)"
+                aria-label="Voice input for From"
+              >
+                🎤
+              </button>
+            </div>
+            <ul id="from-ac" class="ac-list hidden" role="listbox" aria-label="From suggestions"></ul>
+          </div>
+        </label>
+        <label class="field">
+          <span>To</span>
+          <div class="ac-wrap">
+            <div class="input-row">
+              <input
+                id="to-input"
+                type="search"
+                placeholder="Search address or place…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                aria-autocomplete="list"
+                aria-controls="to-ac"
+                aria-expanded="false"
+              />
+              <button
+                type="button"
+                id="voice-to"
+                class="icon-btn"
+                title="Speak destination (parked only)"
+                aria-label="Voice input for To"
+              >
+                🎤
+              </button>
+            </div>
+            <ul id="to-ac" class="ac-list hidden" role="listbox" aria-label="To suggestions"></ul>
+          </div>
+        </label>
+        <label id="priority-field" class="field compact">
+          <span>Your priority (full mode)</span>
+          <select id="priority">
+            <option value="balanced">Balanced</option>
+            <option value="fastest">Fastest</option>
+            <option value="cheapest">Save on tolls</option>
+            <option value="calm">Calmest drive</option>
+            <option value="safest">Safest</option>
+            <option value="parking">Easy parking</option>
+          </select>
+        </label>
+        <details class="field compact" id="risk-details">
+          <summary>Accident risk settings</summary>
+          <label class="field compact">
+            <span>Departure time</span>
+            <input id="depart-at" type="datetime-local" />
+          </label>
+          <label class="field compact">
+            <span>Manual weather (optional)</span>
+            <div class="grid-2">
+              <input id="w-precip" inputmode="decimal" placeholder="Precip mm/hr" />
+              <input id="w-vis" inputmode="decimal" placeholder="Visibility km" />
+              <input id="w-wind" inputmode="decimal" placeholder="Wind kph" />
+              <input id="w-traffic" inputmode="decimal" placeholder="Traffic proxy" />
+            </div>
+          </label>
+          <p class="status" id="risk-note"></p>
+        </details>
+        <button id="compare-btn" class="btn primary" type="button">
+          <span class="btn-inner">Compare routes</span>
+        </button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section id="results" class="results hidden">
+        <div class="results-header glass">
+          <h2 id="trip-title"></h2>
+          <button type="button" id="change-trip" class="text-btn">Change trip</button>
+        </div>
+        <p id="traffic-note" class="traffic-note"></p>
+        <div id="map" class="map glass"></div>
+
+        <div id="passenger-results" class="passenger-results hidden">
+          <p class="passenger-hint">Passenger: tap a style, then open Maps. Driver keeps eyes on the road.</p>
+          <div id="passenger-cards"></div>
+        </div>
+
+        <div id="full-results">
+          <div id="route-cards"></div>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <p id="brand-footer">Plan in MyDrive · navigate in Apple or Google Maps</p>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/mobile/app.js" type="module"></script>
+  </body>
+</html>

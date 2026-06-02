@@ -11,21 +11,41 @@ env/
 .mypy_cache/
 .ruff_cache/
 .ipynb_checkpoints/
+.coverage
+htmlcov/
+*.log
 
 # Distribution / packaging
 build/
 dist/
 *.egg-info/
 
-# Data — keep schema/examples in the repo, not raw rows
+# Data — keep sample + schema in repo; local copies stay untracked
 data/*.csv
 data/processed/
 !data/.gitkeep
+!data/sample/
+!data/sample/**
 
-# Models — too large to track; reproducible from src/model.py
+# Models — reproducible from src/model.py
 models/*.joblib
 models/*.pkl
 !models/.gitkeep
+
+# OSM / geocoder caches (large, machine-specific)
+cache/*
+!cache/.gitkeep
+.osmnx/
+
+# Generated reports
+reports/*.csv
+!reports/.gitkeep
+
+# React Native / Expo
+mobile-native/node_modules/
+mobile-native/.expo/
+mobile-native/.expo-shared/
+mobile-native/dist/
 
 # Streamlit
 .streamlit/secrets.toml

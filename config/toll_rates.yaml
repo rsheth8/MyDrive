@@ -1,0 +1,9 @@
+# Per-km toll estimates when OSM marks a way as tolled (USD).
+# Used when no live toll API key is configured.
+default_per_km: 0.35
+flat_booth_usd: 2.75
+
+by_highway:
+  motorway: 0.45
+  trunk: 0.40
+  primary: 0.30

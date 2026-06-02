@@ -1,1 +1,1 @@
-"""SafePath package initialization."""
+"""MyDrive application package."""
