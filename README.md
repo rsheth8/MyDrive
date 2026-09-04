@@ -1,5 +1,10 @@
 # MyDrive
 
+<p align="center">
+  <img src="docs/brand/logo.png" width="168" alt="MyDrive">
+</p>
+
+
 Chicagoland route planner: compare up to eight drives by time, tolls, calm, and a machine-learning accident-risk score, then hand off to Google or Apple Maps.
 
 | | |
@@ -284,3 +289,10 @@ See [DEPLOY.md](DEPLOY.md) for deploying the Streamlit app to Streamlit Communit
 ## License
 
 See repository license. Built as a portfolio/demo project for exploring Chicagoland driving decisions — not a substitute for professional navigation or safety systems.
+
+## Contributing
+
+PRs and issues welcome. How to run tests, env vars, and the expected layout: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Don't commit `.env`, API keys, or personal recordings.
+
