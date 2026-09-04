@@ -1,13 +1,20 @@
 # MyDrive
 
-**A Chicagoland route planner that compares up to 8 driving options by time, cost, stress, and a machine-learning accident-risk score — then hands you off to Google or Apple Maps to actually drive.**
+Chicagoland route planner: compare up to eight drives by time, tolls, calm, and a machine-learning accident-risk score, then hand off to Google or Apple Maps.
+
+| | |
+| --- | --- |
+| **Author** | [Rahil Sheth](https://github.com/rsheth8) |
+| **Repo** | [rsheth8/MyDrive](https://github.com/rsheth8/MyDrive) |
+| **Stack** | Python, FastAPI, XGBoost, OSMnx/NetworkX, Streamlit, PWA, Expo |
+| **Status** | Portfolio demo. The risk model trains on generated crash/weather history so it runs with no paid keys. Not a turn-by-turn navigator. |
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Desktop-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![OSM](https://img.shields.io/badge/Roads-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
 
-> Safety scores are predictions based on historical patterns, not guarantees. Always drive alert, and only interact with the phone UI while parked.
+> Safety scores are predictions, not guarantees. Drive alert. Use the phone UI only while parked.
 
 ---
 
