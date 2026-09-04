@@ -1,25 +1,24 @@
-# MyDrive
-
 <p align="center">
-  <img src="docs/brand/logo.png" width="168" alt="MyDrive">
+  <img src="docs/brand/logo.png" width="128" alt="MyDrive">
 </p>
 
+<h1 align="center">MyDrive</h1>
 
-Chicagoland route planner: compare up to eight drives by time, tolls, calm, and a machine-learning accident-risk score, then hand off to Google or Apple Maps.
+<p align="center">
+  Chicago doesn’t have one best route. Compare eight — then hand off to Maps.
+</p>
 
-| | |
-| --- | --- |
-| **Author** | [Rahil Sheth](https://github.com/rsheth8) |
-| **Repo** | [rsheth8/MyDrive](https://github.com/rsheth8/MyDrive) |
-| **Stack** | Python, FastAPI, XGBoost, OSMnx/NetworkX, Streamlit, PWA, Expo |
-| **Status** | Portfolio demo. The risk model trains on generated crash/weather history so it runs with no paid keys. Not a turn-by-turn navigator. |
+<p align="center">
+  <a href="https://github.com/rsheth8/MyDrive">Source</a>&nbsp;·&nbsp;<a href="CONTRIBUTING.md">Run locally</a>
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Desktop-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![OSM](https://img.shields.io/badge/Roads-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white">
+  <img alt="XGBoost" src="https://img.shields.io/badge/ML-XGBoost-orange?style=flat-square">
+</p>
 
-> Safety scores are predictions, not guarantees. Drive alert. Use the phone UI only while parked.
+<p align="center"><sub>Portfolio demo. Risk model trains on generated crash/weather history. Not a navigator — park before you tap the UI.</sub></p>
 
 ---
 
